@@ -2,29 +2,28 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem "rails", "3.0.0"
+gem "rack",  "1.2.1"
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem "formtastic",        "1.1.0.beta"
 
-# To use debugger
-# gem 'ruby-debug'
+# http://blog.davidchelimsky.net/2010/07/11/rspec-rails-2-generators-and-rake-tasks/
+group :development, :test do
+  gem "rspec-rails", "2.0.0.rc"
+end
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+group :test, :cucumber do
+  gem "cucumber-rails",     "0.3.2"
+  gem "launchy"
+  gem "factory_girl_rails", "1.0"
+  gem "rspec-rails",        "2.0.0.rc"
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+  gem "shoulda"
+  gem "factory_girl",     "1.3.2"
+  gem "capybara",         "0.3.9"
+  gem "database_cleaner", "0.5.2"
+  gem "factory_girl",     "1.3.2"
+end
+
